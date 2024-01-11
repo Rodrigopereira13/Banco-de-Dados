@@ -14,6 +14,7 @@ public class Program {
         
         SellerDao sellerDao = DaoFactory.createSellerDao();//injeção de dependencia sem explicitar a implentação
 
+        System.out.println("=== Test 1 : seller findById ===");
         Seller seller = sellerDao.findById(3);
 
         System.out.println(seller);
