@@ -2,6 +2,7 @@ package Projeto.src.applcation;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import Projeto.src.model.dao.DaoFactory;
 import Projeto.src.model.dao.SellerDao;
@@ -12,6 +13,7 @@ public class Program {
     
     public static void main(String[] args) {
         
+        Scanner sc = new Scanner(System.in);
         
         SellerDao sellerDao = DaoFactory.createSellerDao();//injeção de dependencia sem explicitar a implentação
 
@@ -43,6 +45,12 @@ public class Program {
         sellerDao.update(seller);
         System.out.println("Update Completed");
 
+        System.out.println("\n=== Test 6 : seller delete ===");
+        System.out.println("Enter id for delete teest: ");
+        int id = sc.nextInt();
+        sellerDao.deleteById(id);
+        System.out.println("Delete completed");
 
+        sc.close();
     }
 }
